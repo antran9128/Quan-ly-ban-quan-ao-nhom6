@@ -1,6 +1,7 @@
-create database QLBH_NHOM6;
+﻿create database QLBH_NHOM6;
 use QLBH_NHOM6;
 
+-- DROP DATABASE QLBH_NHOM6;
 -- Bang khach hang
 create table khachhang(
 	makhachhang varchar(10) primary key,
@@ -80,35 +81,39 @@ VALUES
 	go
 	INSERT INTO hoadon (mahoadon, ngaytao, makhachhang, manhanvien, tongtien, trangthai)
 VALUES 
-    ('HD001', '2023-10-01', 'KH001', 'NV001', 100.50, 'Completed'),
-    ('HD002', '2023-10-02', 'KH002', 'NV002', 75.25, 'Pending'),
-    ('HD003', '2023-10-03', 'KH003', 'NV003', 50.00, 'Completed'),
-    ('HD004', '2023-10-04', 'KH004', 'NV004', 120.75, 'Completed'),
-    ('HD005', '2023-10-05', 'KH005', 'NV005', 90.30, 'Pending');
+    ('HD001', '2023-10-10', 'KH001', 'NV001', 61.97, 'Completed'),
+    ('HD002', '2023-11-02', 'KH002', 'NV002', 55.97, 'Pending'),
+    ('HD003', '2023-11-19', 'KH003', 'NV003', 59.97, 'Completed'),
+    ('HD004', '2023-12-04', 'KH004', 'NV004', 29.99 , 'Completed'),
+    ('HD005', '2023-12-05', 'KH005', 'NV005', 129.95, 'Pending');
 	go
 	INSERT INTO danhmuc (madanhmuc, tendanhmuc)
 VALUES 
-    ('DM001', 'Electronics'),
-    ('DM002', 'Clothing'),
-    ('DM003', 'Home Appliances'),
-    ('DM004', 'Books'),
-    ('DM005', 'Sports Equipment');
+    ('DM001', N'Nam'),
+    ('DM002', N'Nữ'),
+    ('DM003', N'Trẻ em'),
+    ('DM004', N'Unisex'),
+    ('DM005', N'Trẻ sơ sinh');
 	go
 	INSERT INTO sanpham (masanpham, tensanpham, soluongotn, giaban, madanhmuc, trangthai, mausac, ngaytao)
 VALUES 
-    ('SP001', 'Laptop', 10, 1500.00, 'DM001', 'Available', 'Silver', '2023-10-01'),
+    ('SP001', 'Hoodie', 10, 19.99, 'DM001', 'Available', 'Silver', '2023-10-01'),
     ('SP002', 'T-shirt', 50, 25.99, 'DM002', 'Available', 'Red', '2023-10-02'),
-    ('SP003', 'Refrigerator', 5, 800.00, 'DM003', 'Out of Stock', 'White', '2023-10-03'),
-    ('SP004', 'Novel', 20, 12.50, 'DM004', 'Available', 'Blue', '2023-10-04'),
-    ('SP005', 'Football', 30, 19.99, 'DM005', 'Available', 'Yellow', '2023-10-05');
+    ('SP003', 'Sweater', 5, 15.99, 'DM003', 'Out of Stock', 'White', '2023-10-03'),
+    ('SP004', 'Cardigan', 20, 12.99, 'DM004', 'Available', 'Blue', '2023-10-04'),
+    ('SP005', 'Jeans slim fit', 30, 29.99, 'DM005', 'Available', 'Yellow', '2023-10-05');
 	go
  INSERT INTO hoadonchitiet (masanpham, mahoadon, soluong, dongia, ngaytao)
 VALUES
-    ('SP001', 'HD001', 2, 3000.00, '2023-10-01'),
-    ('SP002', 'HD001', 1, 2500.00, '2023-10-01'),
-    ('SP003', 'HD002', 3, 1500.00, '2023-10-02'),
-    ('SP004', 'HD002', 2, 2000.00, '2023-10-02'),
-    ('SP005', 'HD003', 1, 5000.00, '2023-10-03');
+    ('SP001', 'HD001', 1, 19.99, '2023-10-10'),
+    ('SP002', 'HD001', 1, 25.99, '2023-10-10'),
+    ('SP003', 'HD001', 1, 15.99, '2023-10-10'),
+    ('SP004', 'HD002', 2, 25.98, '2023-11-02'),
+    ('SP005', 'HD002', 1, 29.99, '2023-11-02'),
+	('SP003', 'HD003', 3, 59.97, '2023-11-19'),
+	('SP005', 'HD004', 1, 29.99, '2023-12-04'),
+	('SP002', 'HD005', 5, 129.95, '2023-12-05')
+	;
 
 select *from khachhang
 select *from nhanvien
